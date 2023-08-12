@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Style the progress bar container */
+    .progressbar {
+        width: 300px;
+        height: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Style the progress bar fill */
+    .progressbar span {
+        display: block;
+        height: 100%;
+        background-color: rgb(166, 255, 0);
+
+    }
+    .iframe {
+        border: none; 
+        height: 45px;     
+    }
+</style>
+</head>
+<body>
+ hello nelsin your drawing is 
+ <div class="progressbar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+  <span style="width: 75%;"></span>
+ 
+</div> (75% done)
+<div>
+<iframe src="timer/1.html" class="iframe"></iframe></div>
+</body>
+</html>
