@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Redirect</title>
+</head>
+<body>
+    <form id="codeForm">
+        <label for="codeInput">Enter Code: </label>
+        <input type="text" id="codeInput" name="codeInput">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("codeForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const code = document.getElementById("codeInput").value;
+
+            // Check the code and build the redirect URL
+            if (code !== "") {
+                const currentURL = window.location.href;
+                const redirectURL = currentURL + "/drw/" + code + ".html";
+                window.location.href = redirectURL;
+            } else {
+                alert("Please enter a code.");
+            }
+        });
+    </script>
+</body>
+</html>
