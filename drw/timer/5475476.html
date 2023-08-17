@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #timer {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div id="timer">time left: <span id="countdown"></span></div>
+
+<script>
+// Set the target date and time for the countdown (YYYY-MM-DD HH:MM:SS)
+const targetDate = new Date('2023-08-26 10:0:0').getTime();
+
+// Update the countdown every second
+const countdownInterval = setInterval(function() {
+  const currentDate = new Date().getTime();
+  const timeRemaining = targetDate - currentDate;
+
+  if (timeRemaining <= 0) {
+    clearInterval(countdownInterval);
+    document.getElementById('countdown').innerHTML = 'SHIPING';
+  } else {
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById('countdown').innerHTML = days + 'days' + hours + 'hours';
+  }
+}, 1000); // Update every second
+</script>
+</body>
+</html>
